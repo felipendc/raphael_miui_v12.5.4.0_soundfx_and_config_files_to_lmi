@@ -40,7 +40,7 @@ adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
 adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
 adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
 adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
-adb push mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
+adb push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
 
 
 How to mount Vendor partition using adb shell:
