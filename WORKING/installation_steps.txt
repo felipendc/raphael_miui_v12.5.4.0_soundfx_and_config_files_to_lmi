@@ -37,3 +37,4 @@ adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
 adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
 adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
 adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
+adb push mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
