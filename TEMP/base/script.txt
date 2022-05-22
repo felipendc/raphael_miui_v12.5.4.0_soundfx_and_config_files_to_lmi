@@ -41,8 +41,6 @@ adb push audio_libs/system_vendor_lib64/libcapiv2vop.so /system/vendor/lib64/
 #######################################################################################
 
 
+Mounting vendor partition with adb shell:
+adb shell
 mount -o rw,remount /vendor
-
-
-
-
