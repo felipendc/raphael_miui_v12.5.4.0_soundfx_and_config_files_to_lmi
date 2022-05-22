@@ -1,0 +1,50 @@
+Install the "systemrw_1.32_flashable" zip using TWRP
+Reboot into TWRP
+Mount the "vendor" partition
+
+Open a new CMD or a Terminal and type in the following commands:
+
+adb shell
+mount -o rw,remount /vendor
+
+ls vendor/lib/soundfx/
+ls vendor/lib64/soundfx/
+
+rm -Rvf vendor/lib/soundfx/*
+rm -Rvf vendor/lib64/soundfx/*
+
+rm -Rvf /vendor/lib/libsmwrapper.so
+rm -Rvf /vendor/lib/libcapiv2svacnn.so
+rm -Rvf /vendor/lib/libcapiv2vop.so
+rm -Rvf /vendor/lib64/libcapiv2svacnn.so
+rm -Rvf /vendor/lib64/libcapiv2vop.so
+
+rm -Rvf /vendor/etc/sound_trigger_platform_info.xml
+rm -Rvf /vendor/etc/audio_tuning_mixer.txt
+rm -Rvf /vendor/etc/default_volume_tables.xml
+rm -Rvf /vendor/etc/audio_policy_volumes.xml
+rm -Rvf /vendor/etc/sound_trigger_mixer_paths.xml
+exit
+
+adb push lib64\soundfx /vendor/lib64/soundfx
+adb push lib\soundfx /vendor/lib/soundfx
+
+adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
+adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
+adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
+adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
+adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
+
+adb push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
+adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
+adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
+adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
+adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
+adb push mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
+
+
+How to mount Vendor partition using adb shell:
+
+adb shell
+mount -o rw,remount /vendor
+exit
