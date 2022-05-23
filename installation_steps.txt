@@ -51,6 +51,15 @@ rm -Rvf /vendor/lib/hw/android.hardware.audio@5.0-impl.so
 rm -Rvf /vendor/lib/hw/android.hardware.audio@6.0-impl.so
 rm -Rvf /vendor/lib/modules
 rm -Rvf /vendor/build.prop
+rm -Rvf /vendor/lib/libaudio_log_utils.so
+rm -Rvf /vendor/lib/libaudioalsa.so
+rm -Rvf /vendor/lib/libaudioconfigstore.so
+rm -Rvf /vendor/lib/libaudioparsers.so
+rm -Rvf /vendor/lib/libaudioroute_ext.so
+rm -Rvf  /vendor/lib64/libaudio_log_utils.so
+rm -Rvf  /vendor/lib64/libaudioalsa.so
+rm -Rvf  /vendor/lib64/libaudioconfigstore.so
+rm -Rvf  /vendor/lib64/libaudioparsers.so
 exit
 
 
@@ -97,6 +106,15 @@ adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
 adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
 adb push modules_kona /vendor/lib/modules
 adb push build.prop /vendor/
+adb push vlib/libaudio_log_utils.so /vendor/lib/
+adb push vlib/libaudioalsa.so /vendor/lib/
+adb push vlib/libaudioconfigstore.so /vendor/lib/
+adb push vlib/libaudioparsers.so /vendor/lib/
+adb push vlib/libaudioroute_ext.so /vendor/lib/
+adb push vlib64/libaudio_log_utils.so /vendor/lib64/
+adb push vlib64/libaudioalsa.so /vendor/lib64/
+adb push vlib64/libaudioconfigstore.so /vendor/lib64/
+adb push vlib64/libaudioparsers.so /vendor/lib64/
 
 How to mount Vendor partition using adb shell:
 adb shell
