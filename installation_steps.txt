@@ -49,6 +49,7 @@ rm -Rvf /vendor/lib/hw/android.hardware.audio@2.0-impl.so
 rm -Rvf /vendor/lib/hw/android.hardware.audio@4.0-impl.so
 rm -Rvf /vendor/lib/hw/android.hardware.audio@5.0-impl.so
 rm -Rvf /vendor/lib/hw/android.hardware.audio@6.0-impl.so
+rm -Rvf /vendor/lib/modules
 exit
 
 
@@ -93,7 +94,7 @@ adb push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
 adb push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
 adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
 adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
-
+adb push modules_kona /vendor/lib/modules
 
 
 How to mount Vendor partition using adb shell:
