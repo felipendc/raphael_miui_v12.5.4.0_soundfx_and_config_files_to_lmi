@@ -116,7 +116,24 @@ adb push vlib64/libaudioalsa.so /vendor/lib64/
 adb push vlib64/libaudioconfigstore.so /vendor/lib64/
 adb push vlib64/libaudioparsers.so /vendor/lib64/
 
+
+##################################################################################
+Flash magisk.apk via TWRP first 
+# Go to "root-explorer" folder and install the following apks:
+SAI-4.5.apk
+ESFileExplorer-4.2.9.2.1.apk
+es-file-explorer-4-2-9-2-1.apk
+RSFileManager-1.8.8.1.apks
+BusyBox-6.8.2(68003).apk
+
+Open "ES File Explorer" and enable the Root explorer under Tools settings.
+Then, go to /system_ext/lib/ and delete soundfx folder
+Then, go to /system_ext/lib64/ and delete soundfx folder
+Reboot the device!
+##################################################################################
+
 How to mount Vendor partition using adb shell:
 adb shell
 mount -o rw,remount /vendor
 exit
+
