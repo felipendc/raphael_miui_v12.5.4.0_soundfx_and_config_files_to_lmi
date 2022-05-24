@@ -6,144 +6,157 @@ Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaom
 If you intend to install the same files on a different device, you're on your own. Make a nan-backup, beforehand! 
 #####################################################################################################################
 
+
+
+
 INSTALLATION PROCESS:
 
-Install the "systemrw_1.32_flashable" zip using TWRP
-Reboot into TWRP
-Mount the "vendor" partition
-
-Open a new CMD or a Terminal and type in the following commands:
-
-adb shell
-mount -o rw,remount /vendor
-
-ls vendor/lib/soundfx/
-ls vendor/lib64/soundfx/
-rm -Rvf /vendor/lib/soundfx/*
-rm -Rvf /vendor/lib64/soundfx/*
-rm -Rvf /vendor/lib/libsmwrapper.so
-rm -Rvf /vendor/lib/libcapiv2svacnn.so
-rm -Rvf /vendor/lib/libcapiv2vop.so
-rm -Rvf /vendor/lib64/libcapiv2svacnn.so
-rm -Rvf /vendor/lib64/libcapiv2vop.so
-rm -Rvf /vendor/etc/sound_trigger_platform_info.xml
-rm -Rvf /vendor/etc/audio_tuning_mixer.txt
-rm -Rvf /vendor/etc/default_volume_tables.xml
-rm -Rvf /vendor/etc/audio_policy_volumes.xml
-rm -Rvf /vendor/etc/sound_trigger_mixer_paths.xml
-
-rm -Rvf /vendor/lib/android.hardware.audio.common@2.0-util.so 
-rm -Rvf /vendor/lib/android.hardware.audio.common@4.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common@5.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common@6.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@2.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@4.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@5.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@6.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common-util.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@2.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@4.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@5.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@6.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.service
-rm -Rvf /vendor/lib/hw/android.hardware.audio@2.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@4.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@5.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@6.0-impl.so
-rm -Rvf /vendor/lib/modules
-rm -Rvf /vendor/build.prop
-rm -Rvf /vendor/lib/libaudio_log_utils.so
-rm -Rvf /vendor/lib/libaudioalsa.so
-rm -Rvf /vendor/lib/libaudioconfigstore.so
-rm -Rvf /vendor/lib/libaudioparsers.so
-rm -Rvf /vendor/lib/libaudioroute_ext.so
-rm -Rvf /vendor/lib64/libaudio_log_utils.so
-rm -Rvf /vendor/lib64/libaudioalsa.so
-rm -Rvf /vendor/lib64/libaudioconfigstore.so
-rm -Rvf /vendor/lib64/libaudioparsers.so
-exit
+Step 1:
+Install the "systemrw_1.32_flashable" zip using TWRP [twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img] (To make the system "RW" Readable and Writable)
+Reboot the TWRP 
+Flash "Magisk-v24.0.apk" via TWRP, using a USB Stick
+Reboot the device
 
 
-adb push lib64\soundfx /vendor/lib64/soundfx
-adb push lib\soundfx /vendor/lib/soundfx
-adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
-adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
-adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
-adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
-adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
-adb push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
-adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
-adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
-adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
-adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
-adb push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
+Step 2:
+Open Magisk aplication to finish the Root installation, reboot the device, if needed!
 
-adb push vlib/android.hardware.audio.common@2.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@4.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@5.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@6.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common-util.so /vendor/lib/
-adb push vlib64/android.hardware.audio.common@2.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@4.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@5.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@6.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common-util.so /vendor/lib64/
-adb push vlib64-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@2.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@4.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@5.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@6.0-impl.so /vendor/lib64/hw/
-adb push vlib-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.service /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
-adb push modules_kona /vendor/lib/modules
-adb push build.prop /vendor/
-adb push vlib/libaudio_log_utils.so /vendor/lib/
-adb push vlib/libaudioalsa.so /vendor/lib/
-adb push vlib/libaudioconfigstore.so /vendor/lib/
-adb push vlib/libaudioparsers.so /vendor/lib/
-adb push vlib/libaudioroute_ext.so /vendor/lib/
-adb push vlib64/libaudio_log_utils.so /vendor/lib64/
-adb push vlib64/libaudioalsa.so /vendor/lib64/
-adb push vlib64/libaudioconfigstore.so /vendor/lib64/
-adb push vlib64/libaudioparsers.so /vendor/lib64/
-
-
-##################################################################################
-Flash magisk.apk via TWRP first 
 # Go to "root-explorer" folder and install the following apks:
-SAI-4.5.apk
-ESFileExplorer-4.2.9.2.1.apk
 es-file-explorer-4-2-9-2-1.apk
-RSFileManager-1.8.8.1.apks
 BusyBox-6.8.2(68003).apk
 
-Open "ES File Explorer" and enable the Root explorer under Tools settings.
-Then, go to /system_ext/lib/ and delete soundfx folder
-Then, go to /system_ext/lib64/ and delete soundfx folder
-Reboot the device!
-##################################################################################
+Step 3:
+Enable: Developer Mode, USB Debugging, and Install via ADB (To run adb commands or install any apk, if needed, using a PC)
 
-How to mount Vendor partition using adb shell:
-adb shell
-mount -o rw,remount /vendor
-exit
+Step 4:
+Open a new CMD or a Terminal and type in the following commands to mount root directory: "Grant Root permission on your device, if needed".
+adb shell su -c mount -o rw,remount /
 
+Step 5:
+adb shell su -c ls vendor/lib/soundfx/
+adb shell su -c ls vendor/lib64/soundfx/
+adb shell su -c rm -Rvf /vendor/lib/soundfx/*
+adb shell su -c rm -Rvf /vendor/lib64/soundfx/*
+adb shell su -c rm -Rvf /vendor/lib/libsmwrapper.so
+adb shell su -c rm -Rvf /vendor/lib/libcapiv2svacnn.so
+adb shell su -c rm -Rvf /vendor/lib/libcapiv2vop.so
+adb shell su -c rm -Rvf /vendor/lib64/libcapiv2svacnn.so
+adb shell su -c rm -Rvf /vendor/lib64/libcapiv2vop.so
+adb shell su -c rm -Rvf /vendor/etc/sound_trigger_platform_info.xml
+adb shell su -c rm -Rvf /vendor/etc/audio_tuning_mixer.txt
+adb shell su -c rm -Rvf /vendor/etc/default_volume_tables.xml
+adb shell su -c rm -Rvf /vendor/etc/audio_policy_volumes.xml
+adb shell su -c rm -Rvf /vendor/etc/sound_trigger_mixer_paths.xml
+
+
+adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@2.0-util.so 
+adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@4.0-util.so
+adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@5.0-util.so
+adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@6.0-util.so
+adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common-util.so
+adb shell su -c rm -Rvf /vendor/lib64/android.hardware.audio.common@2.0-util.so
+adb shell su -c rm -Rvf /vendor/lib64/android.hardware.audio.common@4.0-util.so
+adb shell su -c rm -Rvf /vendor/lib64/android.hardware.audio.common@5.0-util.so
+adb shell su -c rm -Rvf /vendor/lib64/android.hardware.audio.common@6.0-util.so
+adb shell su -c rm -Rvf /vendor/lib64/android.hardware.audio.common-util.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio@2.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio@4.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio@5.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib64/hw/android.hardware.audio@6.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio.service
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio@2.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio@4.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio@5.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/hw/android.hardware.audio@6.0-impl.so
+adb shell su -c rm -Rvf /vendor/lib/modules
+adb shell su -c rm -Rvf /vendor/build.prop
+adb shell su -c rm -Rvf /vendor/lib/libaudio_log_utils.so
+adb shell su -c rm -Rvf /vendor/lib/libaudioalsa.so
+adb shell su -c rm -Rvf /vendor/lib/libaudioconfigstore.so
+adb shell su -c rm -Rvf /vendor/lib/libaudioparsers.so
+adb shell su -c rm -Rvf /vendor/lib/libaudioroute_ext.so
+adb shell su -c rm -Rvf /vendor/lib64/libaudio_log_utils.so
+adb shell su -c rm -Rvf /vendor/lib64/libaudioalsa.so
+adb shell su -c rm -Rvf /vendor/lib64/libaudioconfigstore.so
+adb shell su -c rm -Rvf /vendor/lib64/libaudioparsers.so
+adb shell su -c rm -Rvf /system_ext/lib/soundfx
+adb shell su -c rm -Rvf /system_ext/lib64/soundfx
+
+
+
+
+############## INSTALL THE REQUIRED FILES: ##############
+
+adb shell su -c adb push lib64\soundfx /vendor/lib64/soundfx
+adb shell su -c adb push lib\soundfx /vendor/lib/soundfx
+adb shell su -c adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
+adb shell su -c adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
+adb shell su -c adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
+adb shell su -c adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
+adb shell su -c adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
+adb shell su -c adb push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
+adb shell su -c adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
+adb shell su -c adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
+adb shell su -c adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
+adb shell su -c adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
+adb shell su -c adb push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
+
+adb shell su -c adb push vlib/android.hardware.audio.common@2.0-util.so /vendor/lib/
+adb shell su -c adb push vlib/android.hardware.audio.common@4.0-util.so /vendor/lib/
+adb shell su -c adb push vlib/android.hardware.audio.common@5.0-util.so /vendor/lib/
+adb shell su -c adb push vlib/android.hardware.audio.common@6.0-util.so /vendor/lib/
+adb shell su -c adb push vlib/android.hardware.audio.common-util.so /vendor/lib/
+adb shell su -c adb push vlib64/android.hardware.audio.common@2.0-util.so /vendor/lib64/
+adb shell su -c adb push vlib64/android.hardware.audio.common@4.0-util.so /vendor/lib64/
+adb shell su -c adb push vlib64/android.hardware.audio.common@5.0-util.so /vendor/lib64/
+adb shell su -c adb push vlib64/android.hardware.audio.common@6.0-util.so /vendor/lib64/
+adb shell su -c adb push vlib64/android.hardware.audio.common-util.so /vendor/lib64/
+adb shell su -c adb push vlib64-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio@2.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio@4.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio@5.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib64-hw/android.hardware.audio@6.0-impl.so /vendor/lib64/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio.service /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
+adb shell su -c adb push modules_kona /vendor/lib/modules
+adb shell su -c adb push build.prop /vendor/
+adb shell su -c adb push vlib/libaudio_log_utils.so /vendor/lib/
+adb shell su -c adb push vlib/libaudioalsa.so /vendor/lib/
+adb shell su -c adb push vlib/libaudioconfigstore.so /vendor/lib/
+adb shell su -c adb push vlib/libaudioparsers.so /vendor/lib/
+adb shell su -c adb push vlib/libaudioroute_ext.so /vendor/lib/
+adb shell su -c adb push vlib64/libaudio_log_utils.so /vendor/lib64/
+adb shell su -c adb push vlib64/libaudioalsa.so /vendor/lib64/
+adb shell su -c adb push vlib64/libaudioconfigstore.so /vendor/lib64/
+adb shell su -c adb push vlib64/libaudioparsers.so /vendor/lib64/
+
+
+
+Cool tips:
+How to grant su permission to run any code with adb:
+adb shell su -c ls <your_code> 
+
+Open "ES File Explorer" and enable the Root explorer under Tools settings to mount Root directory.
+
+How to pull files and folders via adb from root directory:
+adb shell su -c mount -o rw,remount /
+adb pull <what_you_want_to_pull>
+adb pull vendor
