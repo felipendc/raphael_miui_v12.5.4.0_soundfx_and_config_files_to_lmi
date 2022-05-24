@@ -19,8 +19,8 @@ mount -o rw,remount /vendor
 
 ls vendor/lib/soundfx/
 ls vendor/lib64/soundfx/
-rm -Rvf vendor/lib/soundfx/*
-rm -Rvf vendor/lib64/soundfx/*
+rm -Rvf /vendor/lib/soundfx/*
+rm -Rvf /vendor/lib64/soundfx/*
 rm -Rvf /vendor/lib/libsmwrapper.so
 rm -Rvf /vendor/lib/libcapiv2svacnn.so
 rm -Rvf /vendor/lib/libcapiv2vop.so
@@ -66,10 +66,10 @@ rm -Rvf /vendor/lib/libaudioalsa.so
 rm -Rvf /vendor/lib/libaudioconfigstore.so
 rm -Rvf /vendor/lib/libaudioparsers.so
 rm -Rvf /vendor/lib/libaudioroute_ext.so
-rm -Rvf  /vendor/lib64/libaudio_log_utils.so
-rm -Rvf  /vendor/lib64/libaudioalsa.so
-rm -Rvf  /vendor/lib64/libaudioconfigstore.so
-rm -Rvf  /vendor/lib64/libaudioparsers.so
+rm -Rvf /vendor/lib64/libaudio_log_utils.so
+rm -Rvf /vendor/lib64/libaudioalsa.so
+rm -Rvf /vendor/lib64/libaudioconfigstore.so
+rm -Rvf /vendor/lib64/libaudioparsers.so
 exit
 
 
