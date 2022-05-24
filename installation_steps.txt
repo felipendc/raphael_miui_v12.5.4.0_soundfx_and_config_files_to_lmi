@@ -1,5 +1,5 @@
 #####################################################################################################################
-WARNING! This files has only been tested on POCO F2 Pro with:
+WARNING! These files have only been tested on POCO F2 Pro with MIUI V13.0.2.0.SJKCNXM from xiaomi.eu:
 "xiaomi.eu_multi_HMK30Pro_V13.0.2.0.SJKCNXM_v13-12-fastboot"
 Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv13/
 
