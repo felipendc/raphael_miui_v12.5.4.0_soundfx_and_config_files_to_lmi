@@ -48,7 +48,6 @@ adb shell su -c rm -Rvf /vendor/etc/default_volume_tables.xml
 adb shell su -c rm -Rvf /vendor/etc/audio_policy_volumes.xml
 adb shell su -c rm -Rvf /vendor/etc/sound_trigger_mixer_paths.xml
 
-
 adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@2.0-util.so 
 adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@4.0-util.so
 adb shell su -c rm -Rvf /vendor/lib/android.hardware.audio.common@5.0-util.so
@@ -101,64 +100,64 @@ adb shell su -c rm -Rvf /system_ext/lib64/soundfx
 
 ############## INSTALL THE REQUIRED FILES: ##############
 
-adb shell su -c push lib64\soundfx /vendor/lib64/soundfx
-adb shell su -c push lib\soundfx /vendor/lib/soundfx
-adb shell su -c push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
-adb shell su -c push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
-adb shell su -c push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
-adb shell su -c push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
-adb shell su -c push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
-adb shell su -c push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
-adb shell su -c push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
-adb shell su -c push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
-adb shell su -c push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
-adb shell su -c push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
-adb shell su -c push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
+adb push lib64\soundfx /vendor/lib64/soundfx
+adb push lib\soundfx /vendor/lib/soundfx
+adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
+adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
+adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
+adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
+adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
+adb push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
+adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
+adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
+adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
+adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
+adb push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
 
-adb shell su -c push vlib/android.hardware.audio.common@2.0-util.so /vendor/lib/
-adb shell su -c push vlib/android.hardware.audio.common@4.0-util.so /vendor/lib/
-adb shell su -c push vlib/android.hardware.audio.common@5.0-util.so /vendor/lib/
-adb shell su -c push vlib/android.hardware.audio.common@6.0-util.so /vendor/lib/
-adb shell su -c push vlib/android.hardware.audio.common-util.so /vendor/lib/
-adb shell su -c push vlib64/android.hardware.audio.common@2.0-util.so /vendor/lib64/
-adb shell su -c push vlib64/android.hardware.audio.common@4.0-util.so /vendor/lib64/
-adb shell su -c push vlib64/android.hardware.audio.common@5.0-util.so /vendor/lib64/
-adb shell su -c push vlib64/android.hardware.audio.common@6.0-util.so /vendor/lib64/
-adb shell su -c push vlib64/android.hardware.audio.common-util.so /vendor/lib64/
-adb shell su -c push vlib64-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio@2.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio@4.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio@5.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib64-hw/android.hardware.audio@6.0-impl.so /vendor/lib64/hw/
-adb shell su -c push vlib-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio.service /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
-adb shell su -c push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
-adb shell su -c push modules_kona/audio_wcd_core.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_wcd9xxx.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_wcd938x.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_wcd938x_slave.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_wsa_macro.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_wsa881x.ko /vendor/lib/modules/
-adb shell su -c push modules_kona/audio_pinctrl_wcd.ko /vendor/lib/modules/
-adb shell su -c push build.prop /vendor/
-adb shell su -c push vlib/libaudio_log_utils.so /vendor/lib/
-adb shell su -c push vlib/libaudioalsa.so /vendor/lib/
-adb shell su -c push vlib/libaudioconfigstore.so /vendor/lib/
-adb shell su -c push vlib/libaudioparsers.so /vendor/lib/
-adb shell su -c push vlib/libaudioroute_ext.so /vendor/lib/
-adb shell su -c push vlib64/libaudio_log_utils.so /vendor/lib64/
-adb shell su -c push vlib64/libaudioalsa.so /vendor/lib64/
-adb shell su -c push vlib64/libaudioconfigstore.so /vendor/lib64/
-adb shell su -c push vlib64/libaudioparsers.so /vendor/lib64/
+adb push vlib/android.hardware.audio.common@2.0-util.so /vendor/lib/
+adb push vlib/android.hardware.audio.common@4.0-util.so /vendor/lib/
+adb push vlib/android.hardware.audio.common@5.0-util.so /vendor/lib/
+adb push vlib/android.hardware.audio.common@6.0-util.so /vendor/lib/
+adb push vlib/android.hardware.audio.common-util.so /vendor/lib/
+adb push vlib64/android.hardware.audio.common@2.0-util.so /vendor/lib64/
+adb push vlib64/android.hardware.audio.common@4.0-util.so /vendor/lib64/
+adb push vlib64/android.hardware.audio.common@5.0-util.so /vendor/lib64/
+adb push vlib64/android.hardware.audio.common@6.0-util.so /vendor/lib64/
+adb push vlib64/android.hardware.audio.common-util.so /vendor/lib64/
+adb push vlib64-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio@2.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio@4.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio@5.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/android.hardware.audio@6.0-impl.so /vendor/lib64/hw/
+adb push vlib-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio.service /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
+adb push modules_kona/audio_wcd_core.ko /vendor/lib/modules/
+adb push modules_kona/audio_wcd9xxx.ko /vendor/lib/modules/
+adb push modules_kona/audio_wcd938x.ko /vendor/lib/modules/
+adb push modules_kona/audio_wcd938x_slave.ko /vendor/lib/modules/
+adb push modules_kona/audio_wsa_macro.ko /vendor/lib/modules/
+adb push modules_kona/audio_wsa881x.ko /vendor/lib/modules/
+adb push modules_kona/audio_pinctrl_wcd.ko /vendor/lib/modules/
+adb push build.prop /vendor/
+adb push vlib/libaudio_log_utils.so /vendor/lib/
+adb push vlib/libaudioalsa.so /vendor/lib/
+adb push vlib/libaudioconfigstore.so /vendor/lib/
+adb push vlib/libaudioparsers.so /vendor/lib/
+adb push vlib/libaudioroute_ext.so /vendor/lib/
+adb push vlib64/libaudio_log_utils.so /vendor/lib64/
+adb push vlib64/libaudioalsa.so /vendor/lib64/
+adb push vlib64/libaudioconfigstore.so /vendor/lib64/
+adb push vlib64/libaudioparsers.so /vendor/lib64/
 
 
 
@@ -166,9 +165,14 @@ Cool tips:
 How to grant su permission to run any code with adb:
 adb shell su -c ls <your_code> 
 
+
 Open "ES File Explorer" and enable the Root explorer under Tools settings to mount Root directory.
+
 
 How to pull files and folders via adb from root directory:
 adb shell su -c mount -o rw,remount /
+
 adb pull <what_you_want_to_pull>
 adb pull vendor
+adb pull system
+adb pull system_ext
