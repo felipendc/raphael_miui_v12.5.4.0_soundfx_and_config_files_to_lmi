@@ -95,8 +95,8 @@ adb shell rm -Rvf /system_ext/lib64/soundfx
 
 Step 4: Install the required files:
 
-adb push lib64\soundfx /vendor/lib64/soundfx
-adb push lib\soundfx /vendor/lib/soundfx
+adb push lib64/soundfx /vendor/lib64/soundfx
+adb push lib/soundfx /vendor/lib/soundfx
 adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
 adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
 adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
