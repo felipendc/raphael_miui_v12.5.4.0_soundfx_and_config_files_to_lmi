@@ -165,17 +165,7 @@ adb push vlib64/libaudioalsa.so /vendor/lib64/
 adb push vlib64/libaudioconfigstore.so /vendor/lib64/
 adb push vlib64/libaudioparsers.so /vendor/lib64/
 
-adb push s_ext-framework/audiosphere.jar /system_ext/framework/
-adb push s_ext-lib/com.qualcomm.qti.bluetooth_audio@1.0.so /system_ext/lib/
-adb push s_ext-lib/vendor.qti.hardware.audiohalext@1.0.so /system_ext/lib
-adb push s_ext-lib/vendor.qti.hardware.audiohalext-utils.so /system_ext/lib/
-adb push s_ext-lib/vendor.qti.hardware.bluetooth_audio@2.0.so /system_ext/lib/
-adb push s_ext-lib64/com.qualcomm.qti.bluetooth_audio@1.0.so /system_ext/lib64/
-adb push s_ext-lib64/vendor.qti.hardware.audiohalext@1.0.so /system_ext/lib64/
-adb push s_ext-lib64/vendor.qti.hardware.audiohalext-utils.so /system_ext/lib64/
-adb push s_ext-lib64/vendor.qti.hardware.bluetooth_audio@2.0.so /system_ext/lib64/
-adb push s-etc/audio_diag.cfg /system_ext/etc/
-adb push s-etc/audio_effects.conf /system_ext/etc/
+
 
 
 
@@ -209,17 +199,6 @@ rm -Rvf system/lib64/android.hardware.audio.common@7.0-util.so
 rm -Rvf system/lib64/android.hardware.audio@7.0.so
 rm -Rvf system/lib64/android.hardware.audio.effect@7.0.so
 rm -Rvf system/lib64/libaudiohal@7.0.so
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -282,6 +261,19 @@ adb shell rm -Rvf /system/lib64/desktop.ini
 adb shell rm -Rvf /system/lib64/hw/desktop.ini
 adb shell rm -Rvf /system/lib/hw/desktop.ini
 
+
+adb push s_ext-framework/audiosphere.jar /system_ext/framework/
+adb push s_ext-lib/com.qualcomm.qti.bluetooth_audio@1.0.so /system_ext/lib/
+adb push s_ext-lib/vendor.qti.hardware.audiohalext@1.0.so /system_ext/lib
+adb push s_ext-lib/vendor.qti.hardware.audiohalext-utils.so /system_ext/lib/
+adb push s_ext-lib/vendor.qti.hardware.bluetooth_audio@2.0.so /system_ext/lib/
+adb push s_ext-lib64/com.qualcomm.qti.bluetooth_audio@1.0.so /system_ext/lib64/
+adb push s_ext-lib64/vendor.qti.hardware.audiohalext@1.0.so /system_ext/lib64/
+adb push s_ext-lib64/vendor.qti.hardware.audiohalext-utils.so /system_ext/lib64/
+adb push s_ext-lib64/vendor.qti.hardware.bluetooth_audio@2.0.so /system_ext/lib64/
+adb push s-etc/audio_diag.cfg /system_ext/etc/
+adb push s-etc/audio_effects.conf /system_ext/etc/
+
 #####################
 
 
@@ -309,8 +301,6 @@ rm -Rvf system/lib64/android.hardware.audio.common@7.0-util.so
 rm -Rvf system/lib64/android.hardware.audio@7.0.so
 rm -Rvf system/lib64/android.hardware.audio.effect@7.0.so
 rm -Rvf system/lib64/libaudiohal@7.0.so
-
-
 
 
 
