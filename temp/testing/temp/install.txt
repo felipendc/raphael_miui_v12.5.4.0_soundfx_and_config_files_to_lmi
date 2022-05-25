@@ -1,0 +1,38 @@
+REMOVER:
+
+adb shell
+mount -o rw,remount /vendor
+
+
+DELETARRR
+
+USAR
+
+adb push vlib/com.qualcomm.qti.bluetooth_audio@1.0.so /vendor/lib/
+adb push vlib/libbluetooth_audio_session.so /vendor/lib/
+adb push vlib/libbluetooth_audio_session_qti.so /vendor/lib/
+adb push vlib/libwebrtc_audio_preprocessing.so /vendor/lib/
+adb push vlib/vendor.qti.hardware.audiohalext@1.0.so /vendor/lib/
+adb push vlib/vendor.qti.hardware.bluetooth_audio@2.0.so /vendor/lib/
+adb push vlib64/com.qualcomm.qti.bluetooth_audio@1.0.so /vendor/lib64/
+adb push vlib64/libbluetooth_audio_session.so /vendor/lib64/
+adb push vlib64/libbluetooth_audio_session_qti.so /vendor/lib64/
+adb push vlib64/libwebrtc_audio_preprocessing.so /vendor/lib64/
+adb push vlib64/vendor.qti.hardware.audiohalext@1.0.so /vendor/lib64/
+adb push vlib64/vendor.qti.hardware.bluetooth_audio@2.0.so /vendor/lib64/
+adb push vlib64-hw/android.hardware.bluetooth.audio@2.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/audio.bluetooth.default.so /vendor/lib64/hw/
+adb push vlib64-hw/audio.primary.default.so /vendor/lib64/hw/
+adb push vlib64-hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/vendor.qti.hardware.audiohalext@1.0-impl.so /vendor/lib64/hw/
+adb push vlib64-hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so /vendor/lib64/hw/
+adb push vlib-hw/android.hardware.bluetooth.audio@2.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/audio.bluetooth.default.so /vendor/lib/hw/
+adb push vlib-hw/audio.bluetooth_qti.default.so /vendor/lib/hw/
+adb push vlib-hw/audio.primary.default.so /vendor/lib/hw/
+adb push vlib-hw/audio.r_submix.default.so /vendor/lib/hw/
+adb push vlib-hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/vendor.qti.hardware.audiohalext@1.0-impl.so /vendor/lib/hw/
+adb push vlib-hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so /vendor/lib/hw/
+adb push vlib-bin/audioflacapp /vendor/lib/bin/audioflacapp
+adb push vlib-bin/audioshell_service /vendor/lib/bin/audioflacapp
