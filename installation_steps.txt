@@ -140,14 +140,8 @@ adb push vlib64 /vendor/lib64
 
 Cool tips:
 How to grant su permission to run any code with adb (for USB Debugging):
-adb shell su -c ls <your_code> 
+adb shell su -c <your_code> 
 .............
-
-How to Delete files from root directories:
-The device must be rooted!
-
-.............
-
 
 How to pull system and system_ext folders via adb from root directory (using USB Debugging):
 adb shell su -c mount -o rw,remount /
