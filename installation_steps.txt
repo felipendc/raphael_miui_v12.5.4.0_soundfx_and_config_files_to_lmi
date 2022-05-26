@@ -6,26 +6,59 @@ Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaom
 If you intend to install the same files on a different device, you're on your own. Make a nan-backup, beforehand! 
 #####################################################################################################################
 
+REQUIREMENTS:
+ADB and FASTBOOT installed on your PC with Windows or Linux to run the commands;
+a USB STICK to install (systemrw_1.32_flashable.zip and Magisk-v24.0.apk);
+TWRP version: twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img.
+
 
 INSTALLATION PROCESS:
 
 Step 1:
+Copy the folder "required_files_and_apps" to a USB Stick.
+Go to "internal_storage" folder and copy the folder "NeoBackup" to your device's internal storage.
 
-Reboot into TWRP [twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img]
-Flash the "systemrw_1.32_flashable" zip (To make the system "RW" Readable and Writable)
-Reboot the TWRP 
-Flash "Magisk-v24.0.apk", using OTG
-Reboot the device
-Open Magisk app then reboot the device to finish the Magisk installation
-# Go to "root-explorer" folder and install the following apks:
-es-file-explorer-4-2-9-2-1.apk
-BusyBox-6.8.2(68003).apk
-Open BusyBox and grant it root permission and click on "Install"! 
-Open Es File Explorer and close it, reopen it again, and grant it root permission. 
-Then, go Tools option and enable "Root Explorer" then choose "Mount R/W" option.
-Reboot in to TWRP Again
 
-Step 2: Open a new CMD or a Terminal and type in the following commands to mount some directories for adb shell:
+Step 2:
+Reboot into TWRP, click on "Install", then click on "Select Storage" and choose "USB OTG".
+Go to "required_files_and_apps" folder and flash the "systemrw_1.32_flashable.zip" file (to
+make the system "RW" Readable and Writable) and wait until it's done.
+
+
+Step 3:
+Reboot the TWRP, click on "Install", then click on "Select Storage" and choose "USB OTG".
+Go to "required_files_and_apps" folder and flash "Magisk-v24.0.apk" to Root the device, then reboot the device.
+
+
+Step 4:
+Open the Magisk app and reboot the device if needed. (WARNING: Do not update the app to avoid bootloop).
+
+
+Step 5:
+Go to "required_files_and_apps" folder, using any file explorer, and install the following apks on your device:
+BusyBox-6.8.2(68003).apk.
+Neo-Backup-7.0.0.apk
+
+
+Step 6:
+Open the BusyBox app, grant it root permission and click on "Install"! 
+Open the OAndBackupX app and grant it root permission, if needed. Follow its first use setup. Do not forget to choose 
+the folder "NeoBackup" placed in your device's internal storage as the OAndBackupX's default Backup folder!
+
+
+Step 7:
+Open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
+confirm the restoration.
+
+
+Step 8:
+Reboot into TWRP, click on "Mount" button, and tick the following partitions: "System", "system_ext" and "Vendor".
+
+
+Step 9: 
+Plug your device to the computer with a USB cable.
+Open a new CMD or a Terminal inside "raphael_miui_v12.5.4.0_soundfx_and_config_files_to_lmi" folder, and type in the following
+commands to mount some directories for adb shell:
 
 adb shell
 mount -o rw,remount /
@@ -35,7 +68,8 @@ mount -o rw,remount /system_ext
 busybox mount -o remount,rw –t ext4 /dev/block/dm-0 /system_root
 busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
 
-Step 3: Delete the following files:
+
+Step 10: Delete the following files:
 
 ls vendor/lib/soundfx/
 ls vendor/lib64/soundfx/
@@ -116,35 +150,18 @@ rm -Rvf system_root/system/lib64/libaudiohal@7.0.so
 exit
 
 
-Step 4: Install the required files:
+Step 11: Push the required files:
 
-adb push lib64/soundfx /vendor/lib64/soundfx
-adb push lib/soundfx /vendor/lib/soundfx
-adb push audio_libs/vendor_lib32 /vendor/lib
-adb push audio_libs/vendor_lib64 /vendor/lib64
-adb push audio_files /vendor/etc
-adb push vlib /vendor/lib
-adb push vlib64 /vendor/lib64
-adb push vlib64-hw /vendor/lib64/hw
-adb push vlib-hw /vendor/lib/hw
-adb push kernel_audio_modules /vendor/lib/modules
-adb push build.prop /vendor
-adb push vlib /vendor/lib
-adb push vlib64 /vendor/lib64
+adb push vendor /vendor
+
+
+Step 12:
+Reboot the device and enjoy it!
 
 
 
-
-
-
-
-Cool tips:
-How to grant su permission to run any code with adb (for USB Debugging):
-adb shell su -c <your_code> 
-.............
-
-How to pull system and system_ext folders via adb from root directory (using USB Debugging):
-adb shell su -c mount -o rw,remount /
-adb pull system
-adb pull system_ext
-.............
+If you intend to delete some files in the root directory, you can install:
+"rs-file-manager-1-8-8-1.apk" and/or "es-file-explorer-4-2-9-2-1.apk" placed in the folder "required_files_and_apps".
+Open "Es File Explorer" or "RS File Manager" and grant it root permission and then go Tools option and tick "Root Explorer", 
+grant it root permission, if needed, then choose "Mount R/W" option (in case you've installed "Es File Explorer").
+ 
