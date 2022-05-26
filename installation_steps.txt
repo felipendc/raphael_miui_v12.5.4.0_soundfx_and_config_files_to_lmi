@@ -15,10 +15,15 @@ Reboot into TWRP [twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img]
 Flash the "systemrw_1.32_flashable" zip (To make the system "RW" Readable and Writable)
 Reboot the TWRP 
 Flash "Magisk-v24.0.apk", using OTG
-Reboot the device, open Magisk app then reboot the device to finish the Magisk installation
-Reboot the TWRP again
-Go to "Mount" and mount: the "Vendor", "System" and "System_ext" partitions
-
+Reboot the device
+Open Magisk app then reboot the device to finish the Magisk installation
+# Go to "root-explorer" folder and install the following apks:
+es-file-explorer-4-2-9-2-1.apk
+BusyBox-6.8.2(68003).apk
+Open BusyBox and grant it root permission and click on "Install"! 
+Open Es File Explorer and close it, reopen it again, and grant it root permission. 
+Then, go Tools option and enable "Root Explorer" then choose "Mount R/W" option.
+Reboot in to TWRP Again
 
 Step 2: Open a new CMD or a Terminal and type in the following commands to mount some directories for adb shell:
 
@@ -26,6 +31,9 @@ adb shell
 mount -o rw,remount /
 mount -o rw,remount /vendor
 mount -o rw,remount /system_ext
+
+busybox mount -o remount,rw –t ext4 /dev/block/dm-0 /system_root
+busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
 
 Step 3: Delete the following files:
 
@@ -89,67 +97,44 @@ rm -Rvf /vendor/lib64/libaudioconfigstore.so
 rm -Rvf /vendor/lib64/libaudioparsers.so
 rm -Rvf /system_ext/lib/soundfx
 rm -Rvf /system_ext/lib64/soundfx
+rm -Rvf system_root/system/lib/android.hardware.audio.effect@7.0-util.so
+rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0.so
+rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0-enums.so
+rm -Rvf system_root/system/lib/android.hardware.audio@7.0-util.so
+rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0-util.so
+rm -Rvf system_root/system/lib/android.hardware.audio@7.0.so
+rm -Rvf system_root/system/lib/android.hardware.audio.effect@7.0.so
+rm -Rvf system_root/system/lib/libaudiohal@7.0.so
+rm -Rvf system_root/system/lib64/android.hardware.audio.effect@7.0-util.so
+rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0.so
+rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0-enums.so
+rm -Rvf system_root/system/lib64/android.hardware.audio@7.0-util.so
+rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0-util.so
+rm -Rvf system_root/system/lib64/android.hardware.audio@7.0.so
+rm -Rvf system_root/system/lib64/android.hardware.audio.effect@7.0.so
+rm -Rvf system_root/system/lib64/libaudiohal@7.0.so
 exit
+
 
 Step 4: Install the required files:
 
 adb push lib64/soundfx /vendor/lib64/soundfx
 adb push lib/soundfx /vendor/lib/soundfx
-adb push audio_libs/vendor_lib32/libsmwrapper.so /vendor/lib/
-adb push audio_libs/vendor_lib32/libcapiv2svacnn.so /vendor/lib/
-adb push audio_libs/vendor_lib32/libcapiv2vop.so /vendor/lib/
-adb push audio_libs/vendor_lib64/libcapiv2svacnn.so /vendor/lib64/
-adb push audio_libs/vendor_lib64/libcapiv2vop.so /vendor/lib64/
-adb push audio_files/sound_trigger_platform_info.xml /vendor/etc/sound_trigger_platform_info.xml
-adb push audio_files/audio_tuning_mixer.txt /vendor/etc/audio_tuning_mixer.txt
-adb push audio_files/default_volume_tables.xml /vendor/etc/default_volume_tables.xml
-adb push audio_files/audio_policy_volumes.xml /vendor/etc/audio_policy_volumes.xml
-adb push audio_files/sound_trigger_mixer_paths.xml /vendor/etc/sound_trigger_mixer_paths.xml
-adb push audio_files/mixer_paths_pahu.xml /vendor/etc/mixer_paths_pahu.xml
-adb push vlib/android.hardware.audio.common@2.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@4.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@5.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common@6.0-util.so /vendor/lib/
-adb push vlib/android.hardware.audio.common-util.so /vendor/lib/
-adb push vlib64/android.hardware.audio.common@2.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@4.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@5.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common@6.0-util.so /vendor/lib64/
-adb push vlib64/android.hardware.audio.common-util.so /vendor/lib64/
-adb push vlib64-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@2.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@4.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@5.0-impl.so /vendor/lib64/hw/
-adb push vlib64-hw/android.hardware.audio@6.0-impl.so /vendor/lib64/hw/
-adb push vlib-hw/android.hardware.audio.effect@2.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@4.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@5.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.effect@6.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio.service /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@2.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@4.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@5.0-impl.so /vendor/lib/hw/
-adb push vlib-hw/android.hardware.audio@6.0-impl.so /vendor/lib/hw/
-adb push kernel_audio_modules/audio_wcd_core.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_wcd9xxx.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_wcd938x.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_wcd938x_slave.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_wsa_macro.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_wsa881x.ko /vendor/lib/modules/
-adb push kernel_audio_modules/audio_pinctrl_wcd.ko /vendor/lib/modules/
-adb push build.prop /vendor/
-adb push vlib/libaudio_log_utils.so /vendor/lib/
-adb push vlib/libaudioalsa.so /vendor/lib/
-adb push vlib/libaudioconfigstore.so /vendor/lib/
-adb push vlib/libaudioparsers.so /vendor/lib/
-adb push vlib/libaudioroute_ext.so /vendor/lib/
-adb push vlib64/libaudio_log_utils.so /vendor/lib64/
-adb push vlib64/libaudioalsa.so /vendor/lib64/
-adb push vlib64/libaudioconfigstore.so /vendor/lib64/
-adb push vlib64/libaudioparsers.so /vendor/lib64/
+adb push audio_libs/vendor_lib32 /vendor/lib
+adb push audio_libs/vendor_lib64 /vendor/lib64
+adb push audio_files /vendor/etc
+adb push vlib /vendor/lib
+adb push vlib64 /vendor/lib64
+adb push vlib64-hw /vendor/lib64/hw
+adb push vlib-hw /vendor/lib/hw
+adb push kernel_audio_modules /vendor/lib/modules
+adb push build.prop /vendor
+adb push vlib /vendor/lib
+adb push vlib64 /vendor/lib64
+
+
+
+
 
 
 
@@ -160,13 +145,7 @@ adb shell su -c ls <your_code>
 
 How to Delete files from root directories:
 The device must be rooted!
-# Go to "root-explorer" folder and install the following apks:
-es-file-explorer-4-2-9-2-1.apk
-BusyBox-6.8.2(68003).apk
 
-Open BusyBox and grant it root permission! 
-Open Es File Explorer and close it, reopen it again, and grant it root permission. 
-Then, go Tools option and enable "Root Explorer" then choose "Mount R/W" option.
 .............
 
 
