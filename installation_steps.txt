@@ -23,6 +23,8 @@ INSTALLATION PROCESS:
 Step 1:
 Copy the folder "required_files_and_apps" to a USB Stick.
 Go to "internal_storage" folder and copy the folder "NeoBackup" to your device's internal storage.
+Enable Developer Options.
+Go to Developer Options and enable ADB Debugging.
 
 
 Step 2:
