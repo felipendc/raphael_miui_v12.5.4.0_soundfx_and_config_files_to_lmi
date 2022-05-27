@@ -3,13 +3,19 @@ WARNING! These files have only been tested on POCO F2 Pro with MIUI V13.0.2.0.SJ
 "xiaomi.eu_multi_HMK30Pro_V13.0.2.0.SJKCNXM_v13-12-fastboot"
 Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv13/
 
+TWRP twrp-3.6.1_11_v3.4_A12-lmi-skkk_ad9dbce1.img:
+Link: https://t.me/PocoF2ProGlobalOfficial/116586
+
+ADB AND FASTBOOT FOR WINDOWS AND LINUX:
+Link: https://developer.android.com/studio/releases/platform-tools 
+
 If you intend to install the same files on a different device, you're on your own. Make a nan-backup, beforehand! 
 #####################################################################################################################
 
 REQUIREMENTS:
 ADB and FASTBOOT installed on your PC with Windows or Linux to run the commands;
 a USB STICK to install (systemrw_1.32_flashable.zip and Magisk-v24.0.apk);
-TWRP version: twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img.
+TWRP version: twrp-3.6.1_11_v3.4_A12-lmi-skkk_ad9dbce1.img.
 
 
 INSTALLATION PROCESS:
@@ -151,7 +157,6 @@ rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0-util.so
 rm -Rvf system_root/system/lib64/android.hardware.audio@7.0.so
 rm -Rvf system_root/system/lib64/android.hardware.audio.effect@7.0.so
 rm -Rvf system_root/system/lib64/libaudiohal@7.0.so
-
 exit
 
 
