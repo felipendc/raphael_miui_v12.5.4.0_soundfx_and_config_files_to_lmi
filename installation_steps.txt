@@ -6,9 +6,11 @@ Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaom
 TWRP twrp-3.6.1_11_v3.4_A12-lmi-skkk_ad9dbce1.img:
 Link: https://t.me/PocoF2ProGlobalOfficial/116586
 
-ADB AND FASTBOOT FOR WINDOWS AND LINUX:
+ADB AND FASTBOOT FOR WINDOWS:
 Compatible version: https://www.mediafire.com/file/yfg6dgrvip6nyim/ADB_FASTBOOT_(FELIPENDC)__29_05_2022_update.zip/file 
 
+ADB AND FASTBOOT FOR LINUX:
+Ubuntu based distros command: sudo apt install adb fastboot
 
 If you intend to install the same files on a different device, you're on your own. Make a nan-backup, beforehand! 
 #####################################################################################################################
