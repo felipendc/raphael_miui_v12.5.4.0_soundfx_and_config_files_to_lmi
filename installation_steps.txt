@@ -1,10 +1,10 @@
 #####################################################################################################################
-WARNING! These files have only been tested on POCO F2 Pro with MIUI V13.0.2.0.SJKCNXM from xiaomi.eu:
-"xiaomi.eu_multi_HMK30Pro_V13.0.2.0.SJKCNXM_v13-12-fastboot"
-Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv13/
+WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu 22.5.18 Beta:
+"xiaomi.eu_multi_HMK30Pro_22.5.18_v13-12-fastboot.zip"
+Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.5.18/
 
-TWRP twrp-3.6.1_11_v3.4_A12-lmi-skkk_ad9dbce1.img:
-Link: https://t.me/PocoF2ProGlobalOfficial/116586
+TWRP twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img:
+Link: https://www.mediafire.com/file/h8wkgx9j7kq092i/twrp_3.6.0_11-RedmiK30Pro_v3.3_A12.zip/file
 
 ADB AND FASTBOOT FOR WINDOWS:
 Compatible version: https://www.mediafire.com/file/yfg6dgrvip6nyim/ADB_FASTBOOT_(FELIPENDC)__29_05_2022_update.zip/file 
@@ -18,7 +18,7 @@ If you intend to install the same files on a different device, you're on your ow
 REQUIREMENTS:
 ADB and FASTBOOT installed on your PC with Windows or Linux to run the commands;
 a USB STICK to install (systemrw_1.32_flashable.zip and Magisk-v24.0.apk);
-TWRP version: twrp-3.6.1_11_v3.4_A12-lmi-skkk_ad9dbce1.img.
+TWRP version: twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img.
 
 
 INSTALLATION PROCESS:
@@ -82,87 +82,12 @@ busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
 
 Step 10: Delete the following files:
 
-ls vendor/lib/soundfx/
-ls vendor/lib64/soundfx/
 rm -Rvf /vendor/lib/soundfx/*
 rm -Rvf /vendor/lib64/soundfx/*
-rm -Rvf /vendor/lib/libsmwrapper.so
-rm -Rvf /vendor/lib/libcapiv2svacnn.so
-rm -Rvf /vendor/lib/libcapiv2vop.so
-rm -Rvf /vendor/lib64/libcapiv2svacnn.so
-rm -Rvf /vendor/lib64/libcapiv2vop.so
-rm -Rvf /vendor/etc/sound_trigger_platform_info.xml
-rm -Rvf /vendor/etc/audio_tuning_mixer.txt
-rm -Rvf /vendor/etc/default_volume_tables.xml
-rm -Rvf /vendor/etc/audio_policy_volumes.xml
-rm -Rvf /vendor/etc/sound_trigger_mixer_paths.xml
-rm -Rvf /vendor/lib/android.hardware.audio.common@2.0-util.so 
-rm -Rvf /vendor/lib/android.hardware.audio.common@4.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common@5.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common@6.0-util.so
-rm -Rvf /vendor/lib/android.hardware.audio.common-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@2.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@4.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@5.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common@6.0-util.so
-rm -Rvf /vendor/lib64/android.hardware.audio.common-util.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@2.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@4.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@5.0-impl.so
-rm -Rvf /vendor/lib64/hw/android.hardware.audio@6.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio.service
-rm -Rvf /vendor/lib/hw/android.hardware.audio@2.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@4.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@5.0-impl.so
-rm -Rvf /vendor/lib/hw/android.hardware.audio@6.0-impl.so
-rm -Rvf /vendor/lib/modules/audio_wcd_core.ko
-rm -Rvf /vendor/lib/modules/audio_wcd9xxx.ko
-rm -Rvf /vendor/lib/modules/audio_wcd938x.ko
-rm -Rvf /vendor/lib/modules/audio_wcd938x_slave.ko
-rm -Rvf /vendor/lib/modules/audio_wsa_macro.ko
-rm -Rvf /vendor/lib/modules/audio_wsa881x.ko
-rm -Rvf /vendor/lib/modules/audio_pinctrl_wcd.ko
-rm -Rvf /vendor/build.prop
-rm -Rvf /vendor/lib/libaudio_log_utils.so
-rm -Rvf /vendor/lib/libaudioalsa.so
-rm -Rvf /vendor/lib/libaudioconfigstore.so
-rm -Rvf /vendor/lib/libaudioparsers.so
-rm -Rvf /vendor/lib/libaudioroute_ext.so
-rm -Rvf /vendor/lib64/libaudio_log_utils.so
-rm -Rvf /vendor/lib64/libaudioalsa.so
-rm -Rvf /vendor/lib64/libaudioconfigstore.so
-rm -Rvf /vendor/lib64/libaudioparsers.so
-rm -Rvf /vendor/bin/audioshell_service
-rm -Rvf /vendor/bin/audioflacapp
-rm -Rvf /vendor/lib/libwebrtc_audio_preprocessing.so
-rm -Rvf /vendor/lib64/libwebrtc_audio_preprocessing.so
-rm -Rvf /system_ext/lib/soundfx
-rm -Rvf /system_ext/lib64/soundfx
-rm -Rvf system_root/system/lib/android.hardware.audio.effect@7.0-util.so
-rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0.so
-rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0-enums.so
-rm -Rvf system_root/system/lib/android.hardware.audio@7.0-util.so
-rm -Rvf system_root/system/lib/android.hardware.audio.common@7.0-util.so
-rm -Rvf system_root/system/lib/android.hardware.audio@7.0.so
-rm -Rvf system_root/system/lib/android.hardware.audio.effect@7.0.so
-rm -Rvf system_root/system/lib/libaudiohal@7.0.so
-rm -Rvf system_root/system/lib64/android.hardware.audio.effect@7.0-util.so
-rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0.so
-rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0-enums.so
-rm -Rvf system_root/system/lib64/android.hardware.audio@7.0-util.so
-rm -Rvf system_root/system/lib64/android.hardware.audio.common@7.0-util.so
-rm -Rvf system_root/system/lib64/android.hardware.audio@7.0.so
-rm -Rvf system_root/system/lib64/android.hardware.audio.effect@7.0.so
-rm -Rvf system_root/system/lib64/libaudiohal@7.0.so
+rm -Rvf /vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
+rm -Rvf /vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
 exit
+
 
 
 Step 11: Push the required files:
