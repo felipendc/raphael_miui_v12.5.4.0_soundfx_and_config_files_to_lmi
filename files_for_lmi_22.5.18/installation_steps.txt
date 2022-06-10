@@ -1,0 +1,108 @@
+
+#####################################################################################################################
+WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu 22.5.18 Beta:
+"xiaomi.eu_multi_HMK30Pro_22.5.18_v13-12-fastboot.zip"
+Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.5.18/
+
+TWRP twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img:
+Link: https://www.mediafire.com/file/h8wkgx9j7kq092i/twrp_3.6.0_11-RedmiK30Pro_v3.3_A12.zip/file
+
+ADB AND FASTBOOT FOR WINDOWS:
+Compatible version: https://www.mediafire.com/file/yfg6dgrvip6nyim/ADB_FASTBOOT_(FELIPENDC)__29_05_2022_update.zip/file 
+
+ADB AND FASTBOOT FOR LINUX:
+Ubuntu based distros command: sudo apt install adb fastboot
+
+If you intend to install the same files on a different device, you're on your own. Make a nan-backup, beforehand! 
+#####################################################################################################################
+
+REQUIREMENTS:
+ADB and FASTBOOT installed on your PC with Windows or Linux to run the commands;
+a USB STICK to install (systemrw_1.32_flashable.zip and Magisk-v24.0.apk);
+TWRP version: twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img.
+
+
+INSTALLATION PROCESS:
+
+
+Step 1:
+Copy the folder "required_files_and_apps" to a USB Stick.
+Go to "internal_storage" folder and copy the folder "NeoBackup" to your device's internal storage.
+Enable Developer Options.
+Go to Developer Options and enable ADB Debugging.
+
+
+Step 2:
+Reboot into TWRP, click on "Install", then click on "Select Storage" and choose "USB OTG".
+Go to "required_files_and_apps" folder and flash the "systemrw_1.32_flashable.zip" file (to
+make the system "RW" Readable and Writable) and wait until it's done.
+
+
+Step 3:
+Reboot the TWRP, click on "Install", then click on "Select Storage" and choose "USB OTG".
+Go to "required_files_and_apps" folder and flash "Magisk-v24.0.apk" to Root the device, then reboot the device.
+
+
+Step 4:
+Open the Magisk app and reboot the device if needed. (WARNING: Do not update the app to avoid bootloop).
+
+
+Step 5:
+Go to "required_files_and_apps" folder, using any file explorer, and install the following apks on your device:
+BusyBox-6.8.2(68003).apk.
+Neo-Backup-7.0.0.apk
+
+
+Step 6:
+Open the BusyBox app, grant it root permission and click on "Install"! 
+Open the OAndBackupX app and grant it root permission, if needed. Follow its first use setup. Do not forget to choose 
+the folder "NeoBackup" placed in your device's internal storage as the OAndBackupX's default Backup folder!
+
+
+Step 7:
+Reboot into TWRP, click on "Mount" button, and tick the following partitions: "System", "system_ext" and "Vendor".
+
+
+Step 8: 
+Plug your device to the computer with a USB cable.
+Open a new CMD or a Terminal inside "raphael_miui_v12.5.4.0_soundfx_and_config_files_to_lmi" folder, and type in the following
+commands to mount some directories for adb shell:
+
+adb shell
+mount -o rw,remount /
+mount -o rw,remount /vendor
+mount -o rw,remount /system_ext
+
+busybox mount -o remount,rw –t ext4 /dev/block/dm-0 /system_root
+busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
+
+
+Step 9: Delete the following files:
+
+rm -Rvf /vendor/lib/soundfx/*
+rm -Rvf /vendor/lib64/soundfx/*
+rm -Rvf /vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
+rm -Rvf /vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
+exit
+
+
+
+Step 10: Push the required files:
+
+adb push vendor /vendor
+
+
+Step 11: Restoring the Sound Effects data:
+Reboot the device, open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
+confirm the restoration.
+
+
+Step 12:
+Reboot the device and enjoy it!
+
+
+If you intend to delete some files in the root directory, you can install:
+"rs-file-manager-1-8-8-1.apk" and/or "es-file-explorer-4-2-9-2-1.apk" placed in the folder "required_files_and_apps".
+Open "Es File Explorer" or "RS File Manager" and grant it root permission and then go Tools option and tick "Root Explorer", 
+grant it root permission, if needed, then choose "Mount R/W" option (in case you've installed "Es File Explorer").
+ 
