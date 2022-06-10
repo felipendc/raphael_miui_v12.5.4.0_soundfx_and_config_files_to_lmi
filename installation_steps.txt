@@ -1,10 +1,13 @@
 
 #####################################################################################################################
-WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu 22.5.18 and 22.6.9_v13 Beta:
+WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu:
+
 "xiaomi.eu_multi_HMK30Pro_22.5.18_v13-12-fastboot.zip"
 "xiaomi.eu_multi_HMK30Pro_22.6.9_v13-12-fastboot.zip"
+"xiaomi.eu_multi_HMK30Pro_V13.0.4.0.SJKCNXM_v13-12-fastboot.zip"
 Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.5.18/
 Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.6.9/
+Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv13/
 
 TWRP twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img:
 Link: https://www.mediafire.com/file/h8wkgx9j7kq092i/twrp_3.6.0_11-RedmiK30Pro_v3.3_A12.zip/file
@@ -92,6 +95,7 @@ Step 10: Push the required files:
 
 adb push vendor /vendor
 adb shell reboot
+
 
 Step 11: Restoring the Sound Effects data:
 After rebooting the device, open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
