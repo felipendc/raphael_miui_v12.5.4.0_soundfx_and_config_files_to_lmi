@@ -1,7 +1,10 @@
+
 #####################################################################################################################
-WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu 22.5.18 Beta:
+WARNING! These files have only been tested on POCO F2 Pro with MIUI V13 by xiaomi.eu 22.5.18 and 22.6.9_v13 Beta:
 "xiaomi.eu_multi_HMK30Pro_22.5.18_v13-12-fastboot.zip"
+"xiaomi.eu_multi_HMK30Pro_22.6.9_v13-12-fastboot.zip"
 Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.5.18/
+Link: https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/22.6.9/
 
 TWRP twrp_3.6.0_11-RedmiK30Pro_v3.3_A12-lmi-skkk_e185dab6.img:
 Link: https://www.mediafire.com/file/h8wkgx9j7kq092i/twrp_3.6.0_11-RedmiK30Pro_v3.3_A12.zip/file
@@ -58,15 +61,10 @@ the folder "NeoBackup" placed in your device's internal storage as the OAndBacku
 
 
 Step 7:
-Open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
-confirm the restoration.
-
-
-Step 8:
 Reboot into TWRP, click on "Mount" button, and tick the following partitions: "System", "system_ext" and "Vendor".
 
 
-Step 9: 
+Step 8: 
 Plug your device to the computer with a USB cable.
 Open a new CMD or a Terminal inside "raphael_miui_v12.5.4.0_soundfx_and_config_files_to_lmi" folder, and type in the following
 commands to mount some directories for adb shell:
@@ -80,7 +78,7 @@ busybox mount -o remount,rw –t ext4 /dev/block/dm-0 /system_root
 busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
 
 
-Step 10: Delete the following files:
+Step 9: Delete the following files:
 
 rm -Rvf /vendor/lib/soundfx/*
 rm -Rvf /vendor/lib64/soundfx/*
@@ -90,14 +88,18 @@ exit
 
 
 
-Step 11: Push the required files:
+Step 10: Push the required files:
 
 adb push vendor /vendor
 
 
+Step 11: Restoring the Sound Effects data:
+Reboot the device, open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
+confirm the restoration.
+
+
 Step 12:
 Reboot the device and enjoy it!
-
 
 
 If you intend to delete some files in the root directory, you can install:
