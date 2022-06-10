@@ -91,10 +91,10 @@ exit
 Step 10: Push the required files:
 
 adb push vendor /vendor
-
+adb shell reboot
 
 Step 11: Restoring the Sound Effects data:
-Reboot the device, open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
+After rebooting the device, open the OAndBackupX app, select "Restore" and click on "Sound Effects", then click on restore and click on "Yes" to 
 confirm the restoration.
 
 
