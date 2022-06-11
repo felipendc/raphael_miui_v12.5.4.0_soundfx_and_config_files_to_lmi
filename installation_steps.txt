@@ -76,7 +76,6 @@ adb shell
 mount -o rw,remount /
 mount -o rw,remount /vendor
 mount -o rw,remount /system_ext
-
 busybox mount -o remount,rw –t ext4 /dev/block/dm-0 /system_root
 busybox mount -o remount,rw –t ext4 /dev/block/dm-1 /system_ext
 
@@ -90,10 +89,10 @@ rm -Rvf /vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
 exit
 
 
-
 Step 10: Push the required files:
 
 adb push vendor /vendor
+adb push system /system_root/system
 adb shell reboot
 
 
