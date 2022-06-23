@@ -101,7 +101,12 @@ After rebooting the device, open the OAndBackupX app, select "Restore" and selec
 confirm the restoration.
 
 
-Step 12:
+Step 12 Giving Wavelet grant permission and wrapping it up:
+
+adb shell
+su
+pm grant com.pittvandewitt.wavelet android.permission.DUMP
+
 Reboot the device and enjoy it!
 
 
